@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000; /* Adjust based on your design */
+    padding: 10px;
+}
+
+.container{
+display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+
+}
