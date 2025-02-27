@@ -4,6 +4,8 @@
 
 nav img {
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
 }
 
 
@@ -15,7 +17,7 @@ nav a {
     border: 3px solid #2a5c28 ;
     border-radius: 5px;
     padding: 7px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -27,22 +29,108 @@ nav button {
     font-weight: bolder;
 }
 
-.header header {
-    display:flex;
-    align-items: center;
-    flex-direction: column;
+
+
+.backgrundsBild {
+width: 100vw;
+height: 60vh;
+position: sticky;
+margin: 0;
+backdrop-filter: blur(10px);
 }
 
-.header header h1{
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+header div {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+header h1 {
     font-size: 150px;
     margin-bottom: 0;
     color: #2a5c28;
     font-family: "Playwrite IT Moderna", serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.header header p{
+header p {
     font-size: 20px;
     margin-top: 0;
     font-family: "Playwrite IT Moderna", serif;
     color: #000;
 }
+
+main {
+    background-image: url(/img/Reeves.jpg);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    color: #fff; 
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.items {
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px; 
+    width: 90%;
+    max-width: 800px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.items:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+}
+
+h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+}
+
+p {
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        font-size: 16px; 
+    }
+
+    .items {
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+}
+
+
