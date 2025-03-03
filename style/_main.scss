@@ -74,8 +74,20 @@ header p {
     color: #000;
 }
 
+.header-btn button {
+    background-color: #61c916;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 50px 0 50px;
+}
+
 main {
-    background-image: url(/img/Reeves.jpg);
+    background-image: url(/img/Reves.png);
     background-size: cover;
     background-position: center;
     backdrop-filter: blur(10px);

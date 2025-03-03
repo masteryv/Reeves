@@ -69,8 +69,20 @@ header p {
   color: #000;
 }
 
+.header-btn button {
+  background-color: #61c916;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: 0 50px 0 50px;
+}
+
 main {
-  background-image: url(/img/Reeves.jpg);
+  background-image: url(/img/Reves.png);
   background-size: cover;
   background-position: center;
   -webkit-backdrop-filter: blur(10px);
@@ -145,4 +157,16 @@ nav {
   display: flex;
   height: 100vh;
   flex-direction: column;
+}
+
+.header-btn {
+  background: #173054;
+  color: #fff;
+  padding: 90px 170px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }/*# sourceMappingURL=style.css.map */
