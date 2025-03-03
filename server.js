@@ -9,10 +9,11 @@ const PORT = 3306;
 app.use(express.static('style'));
 
 //  Serve HTML Pages
-
+//main page
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
+//about us
 app.get('/aboutUs', (req, res) => res.sendFile(path.join(__dirname, 'views', 'aboutUs.html')));
-
+//meny
 app.get('/meny', (req, res) => res.sendFile(path.join(__dirname, 'views', 'meny.html')));
 
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
