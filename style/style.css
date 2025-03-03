@@ -15,6 +15,9 @@ nav a {
   padding: 7px;
   font-size: 14px;
 }
+nav a .login-nav {
+  margin: 0px;
+}
 
 nav button {
   margin-left: auto;

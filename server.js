@@ -3,8 +3,7 @@ const path = require('path');
 
 
 const app = express();
-const PORT = 3000;
-
+const PORT = 3306;
 
 //  Serve static files from "public"
 app.use(express.static('style'));
@@ -16,6 +15,8 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.htm
 app.get('/aboutUs', (req, res) => res.sendFile(path.join(__dirname, 'views', 'aboutUs.html')));
 //meny
 app.get('/meny', (req, res) => res.sendFile(path.join(__dirname, 'views', 'meny.html')));
+
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
 
 
 //  Start the Server
