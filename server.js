@@ -10,6 +10,7 @@ const PORT = 3000;
 app.use(express.static('style'));
 
 //  Serve HTML Pages
+
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'views', 'index.html')));
 app.get('/aboutUs', (req, res) => res.sendFile(path.join(__dirname, 'views', 'aboutUs.html')));
 
