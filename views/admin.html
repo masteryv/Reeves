@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="admin.js"></script>
+</head>
+<body>
+
+    <a href="/">About Us</a>
+<h1>Fix the meny</h1>
+<form method="POST" action="/meny">
+    <label for=items">Items</label>
+    <input type="items" name="items" id="items">
+    <label for="price">Price</label>
+    <input type="price" name="price" id="price">
+    <label for="ingredients">Ingredients</label>
+    <input type="ingredients" name="ingredients" id="ingredients">
+    <input type="submit">	
+</form>
+
+<table border="1" id="menuDisplay">
+    <tr>
+        <th>ID</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Ingredients</th>
+    </tr>
+</table>
+   <!-- <tr>
+        <td>Item Name</td>
+        <td>$10.99</td>
+        <td>Ingredient 1, Ingredient 2</td>
+    </tr>
+    <tr>
+        <td>Another Item</td>
+        <td>$8.50</td>
+        <td>Ingredient A, Ingredient B</td>
+    </tr>
+    -->
+</table>
+
+</body>
+</html>
