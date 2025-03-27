@@ -59,7 +59,7 @@ app.post('/signup', async (req, res) => {
     console.log(name, email, password);
     try {
         const result = await dbService.addUser(name, email, password, phone);
-        res.json({ message: 'User added successfully', result });
+        res.redirect("/");
     } catch (error) {
         res.status(500).json({ message: 'Error adding user', error });
     }
@@ -115,12 +115,23 @@ app.post('/meny', async (req, res) => {
     console.log(items, price, ingredients);
     try {
         const result = await dbService.addMenu(items, price, ingredients);
-        res.json({ message: 'Menu added successfully', result });
-    } catch (error) {
-        res.status(500).json({ message: 'Error adding user', error });
+        res.redirect("/admin");
+  }catch (error) {
+        res.status(500).json({ message: 'Error adding items', error });
     }
   });
-  
+
+// delete menu
+app.post('/del', async (req, res) => {
+    console.log("req.body");
+    console.log(req.body.id);
+    try {
+        const result = await dbService.deleteItemMeny(Number(req.body.id));
+        res.redirect("/admin");
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting item', error });
+    }
+});
 
 //  Start the Server
 app.listen(PORT, () => {

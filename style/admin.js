@@ -35,7 +35,7 @@ function fetchData(data) {
         let row = table.insertRow();
         row.insertCell(0).textContent = item.id;
         row.insertCell(1).textContent = item.items;
-        row.insertCell(2).textContent = item.price;
+        row.insertCell(2).textContent = item.price + "SEK";
         row.insertCell(3).textContent = item.ingredients;
     });
 }

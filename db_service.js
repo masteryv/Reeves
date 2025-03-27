@@ -60,6 +60,13 @@ const addMenu = async function addMenu(items, price,ingredients ) {
   }
 }
 
+async function deleteItemMeny(id){
+  const [res] = await connection.query(`
+    DELETE FROM meny WHERE id = ?;
+    `, [id]);
+    return res[0];
+}
+
 
 
 async function getUser(email) {
@@ -85,19 +92,6 @@ async function getMenu(items, price,ingredients) {
 }
 
 
-async function deleteMenuItems(id, items, price,ingredients) {  console.log("!");
-  try {
-      const res = await connection.query(
-          'DELETE FROM meny WHERE id = ?'
-
-      );
-      return res[0]; // MySQL returns an array, first item is the result
-  } catch (error) {
-      console.error('Error getting menu:', error);
-      throw error;
-  }
-}
-
 
 
   
@@ -107,5 +101,5 @@ async function deleteMenuItems(id, items, price,ingredients) {  console.log("!")
   addUser: addUser, // add user
   addMenu:addMenu, // add menu
   getMenu:getMenu, // get menu
-  deleteMenuItems: deleteMenuItems // delete menu items
+  deleteItemMeny : deleteItemMeny // delete menu items
 }
