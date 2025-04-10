@@ -133,6 +133,44 @@ app.post('/del', async (req, res) => {
     }
 });
 
+// add Table
+app.post('/table', async (req, res) => {
+    const { bordNr, seats} = req.body;
+
+    if (!bordNr || !seats ) {
+        return res.status(400).json({ message: 'Missing required parameters' });
+    }
+    console.log(bordNr, seats)
+    try {
+        const result = await dbService.addTable(bordNr, seats);
+        res.redirect("/admin");
+  }catch (error) {
+        res.status(500).json({ message: 'Error adding table', error });
+    }
+  });
+
+
+  app.get('/tableDisplay', async function(req, res) {
+    try {
+        const result = await dbService.getTable("bordNr", "seats");
+        res.send(result);
+
+    } catch (error) {
+        return res.status({message: error});
+    }
+})
+
+app.post('/delTable', async (req, res) => {
+    console.log("req.body");
+    console.log(req.body.id);
+    try {
+        const result = await dbService.deleteItemTable(Number(req.body.id));
+        res.redirect("/admin");
+    } catch (error) {
+        res.status(500).json({ message: 'Error deleting item', error });
+    }
+});
+
 //  Start the Server
 app.listen(PORT, () => {
     console.log(` Server running at http://localhost:${PORT}`);

@@ -141,6 +141,13 @@ p {
     font-size: 2rem;
   }
 }
+.adminBody {
+  background: #ffb347; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: monospace;
+  color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -172,4 +179,8 @@ nav {
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
+}
+
+.adminBody {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

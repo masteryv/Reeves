@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="admin.js"></script>
 </head>
-<body>
+
+<body class="adminBody">
 
     <a href="/">About Us</a>
 <h1>Fix the meny</h1>
@@ -37,5 +39,30 @@
     <input type="submit">	
 </form>
 
+
+<h1>Fix Tables</h1>
+
+<form method="POST" action="table">
+    <label for=bordNr">Table Nr</label>
+    <input type="bordNr" name="bordNr" id="bordNr">
+    <label for=seats">Seats amount</label>
+    <input type="seats" name="seats" id="seats">
+    <input type="submit">	
+</form>
+
+<table border="1" id="tableDisplay">
+    <tr>
+        <th>ID</th>
+        <th>bordNr</th>
+        <th>seats</th>
+    </tr>
+</table>
+<br><br>
+
+<form method="POST" action="/delTable">
+    <label for="id">Write ID and delete that!</label>
+    <input type="id" name="id" id="id">
+    <input type="submit">	
+</form>
 </body>
 </html>

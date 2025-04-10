@@ -67,6 +67,14 @@ async function deleteItemMeny(id){
     return res[0];
 }
 
+async function deleteItemTable(id){
+  const [res] = await connection.query(`
+    DELETE FROM bord WHERE id = ?;
+    `, [id]);
+    return res[0];
+}
+
+
 
 
 async function getUser(email) {
@@ -90,6 +98,33 @@ async function getMenu(items, price,ingredients) {
   }
   
 }
+const addTable = async function addTable(bordNr, seats) {
+  console.log("!");
+  try {
+      const res = await connection.query(
+          'INSERT INTO bord (bordNr, seats ) VALUES (?,?)',
+          [bordNr, seats ]
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error adding table:', error);
+      throw error;
+  }
+}
+
+async function getTable(bordNr, seats) {
+  console.log("!");
+  try {
+      const res = await connection.query(
+          'SELECT * FROM bord'
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error getting table:', error);
+      throw error;
+  }
+
+}
 
 
 
@@ -101,5 +136,9 @@ async function getMenu(items, price,ingredients) {
   addUser: addUser, // add user
   addMenu:addMenu, // add menu
   getMenu:getMenu, // get menu
-  deleteItemMeny : deleteItemMeny // delete menu items
+  deleteItemMeny : deleteItemMeny, // delete menu items
+  addTable:addTable, // add table
+  getTable:getTable,
+  deleteItemTable:deleteItemTable
+
 }
