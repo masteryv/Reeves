@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 nav img {
   border-radius: 50%;
   width: 40px;
@@ -27,15 +28,6 @@ nav button {
   font-weight: bolder;
 }
 
-.backgrundsBild {
-  width: 100vw;
-  height: 60vh;
-  position: sticky;
-  margin: 0;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-
 header {
   display: flex;
   align-items: center;
@@ -48,8 +40,8 @@ header {
 header div {
   position: absolute;
   background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -58,11 +50,18 @@ header div {
 }
 
 header h1 {
-  font-size: 150px;
-  margin-bottom: 0;
-  color: #2a5c28;
-  font-family: "Playwrite IT Moderna", serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: "Sacramento", cursive;
+  font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
 }
 
 header p {
@@ -148,6 +147,42 @@ p {
   color: black;
 }
 
+.bookingForm {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 50px black;
+  background: #000000; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bookingFormLbl {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+  font-style: italic;
+  margin-bottom: 5px;
+  color: white;
+  display: block; /* Ensures it occupies the full width */
+  text-align: center; /* Centers the label text */
+}
+
+.bookingFormBtn {
+  padding: 8px 20px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 3px;
+  background-color: lightgoldenrodyellow;
+  color: black;
+  cursor: pointer;
+}
+
+.bookingFormBtn:hover {
+  background-color: darkblue;
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -183,4 +218,11 @@ nav {
 
 .adminBody {
   text-align: center;
+}
+
+.backgrundsBild {
+  width: 100%;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

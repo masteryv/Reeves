@@ -38,6 +38,8 @@ app.get('/', (req, res) => {
 app.get('/aboutUs', (req, res) => res.sendFile(path.join(__dirname, 'views', 'aboutUs.html')));
 //meny
 app.get('/meny', (req, res) => res.sendFile(path.join(__dirname, 'views', 'meny.html')));
+//booking
+app.get('/booking', (req, res) => res.sendFile(path.join(__dirname, 'views', 'booking.html')));
 
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
 
