@@ -1,48 +1,56 @@
-document.addEventListener("DOMContentLoaded", function(){
-    console.log("hello world")
-    createForm();
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("connected")
+    createInputForm();
+    });
 
+//genererar html
+function createInputForm() {
+    console.log("created");
+    // creating all necessary elements
+    const container = document.querySelector('.booking-container'); // Fixed selector to use class
+    const formContainer = document.createElement('div');
+    const form = document.createElement('form');
+    const dateLabel = document.createElement('label');
+    const dateInput = document.createElement('input');
+    const amountLabel = document.createElement('label');
+    const amountInput = document.createElement('input');
+    const submitButton = document.createElement('button'); // Create submit button
 
-    
-});
+    // setting attributes and content
+    form.setAttribute("method", "post");
+    dateLabel.setAttribute("for", "date");
+    dateLabel.textContent = "Enter the date you want to come";
+    dateInput.setAttribute("type", "date");
+    dateInput.setAttribute("placeholder", "Click Here");
 
-function createForm(){
-// tar in alla elemnt needed
-let bookingContainer = document.querySelector('.bookingContainer')
-let formContainer = document.querySelector('.formContainer')
-let form = document.getElementById('form')
-let body = document.querySelector('.bookingBody')
-console.log(body)
+    amountLabel.setAttribute("for", "Amount");
+    amountLabel.textContent = "How many people?";
+    amountInput.setAttribute("type", "number");
+    amountInput.setAttribute("placeholder", "Enter Here");
 
-// skapar element
- let labelDate = document.createElement('label')
- let inputDate = document.createElement('input')
- let submit = document.createElement('button')
+    submitButton.setAttribute("type", "submit"); // Set button type to submit
+    submitButton.textContent = "Submit"; // Set button text
 
+    // setting classes
+    formContainer.classList.add('formContainer');
 
-//label
-labelDate.innerText = "Please Enter the date you want book";
-submit.innerText = "Submit";
-labelDate.classList.add("bookingFormLbl")
-inputDate.classList.add("bookingFormInput") 
-submit.classList.add("bookingFormBtn")
-
-
-
-//input
-inputDate.type = "date"
-
-//submit knappen
-
- 
-// formatterar
-body.appendChild(bookingContainer)
-bookingContainer.appendChild(form)
-formContainer.appendChild(labelDate)
-formContainer.appendChild(inputDate)
-form.appendChild(submit)
-console.log("fwl")
-
-
-console.log("loaded2")
+    // appending elements
+    container.appendChild(formContainer);
+    formContainer.appendChild(form);
+    form.appendChild(dateLabel);
+    form.appendChild(dateInput);
+    form.appendChild(amountLabel);
+    form.appendChild(amountInput);
+    form.appendChild(submitButton); // Append submit button to the form
 }
+
+
+function dateValidation() {
+    const dateInput = document.querySelector('input[type="date"]');
+    const today = new Date().toISOString().split('T')[0];
+    if (dateInput.value < today) {
+        alert("Please select a future date.");
+        return false;
+    }
+    return true;
+}   

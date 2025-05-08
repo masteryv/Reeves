@@ -126,6 +126,21 @@ async function getTable(bordNr, seats) {
 
 }
 
+// booking date
+const addBookingDate = async function addBookingDate(datum) {
+  console.log("!");
+  try {
+      const res = await connection.query(
+          'INSERT INTO booking (datum ) VALUES (?)',
+          [datum]
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error adding datum:', error);
+      throw error;
+  }
+}
+
 
 
 
@@ -139,6 +154,7 @@ async function getTable(bordNr, seats) {
   deleteItemMeny : deleteItemMeny, // delete menu items
   addTable:addTable, // add table
   getTable:getTable,
-  deleteItemTable:deleteItemTable
+  deleteItemTable:deleteItemTable,
+  addBookingDate:addBookingDate //add date
 
 }
