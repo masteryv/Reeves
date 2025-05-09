@@ -126,13 +126,13 @@ async function getTable(bordNr, seats) {
 
 }
 
-// booking date
-const addBookingDate = async function addBookingDate(datum) {
-  console.log("!");
+// add booking date & amount of people
+const addBooking = async function addBooking(datum, personer) {
+  console.log("booking added ");
   try {
       const res = await connection.query(
-          'INSERT INTO booking (datum ) VALUES (?)',
-          [datum]
+          'INSERT INTO booking (datum, personer ) VALUES (?,?)',
+          [datum,personer]
       );
       return res[0]; // MySQL returns an array, first item is the result
   } catch (error) {
@@ -155,6 +155,6 @@ const addBookingDate = async function addBookingDate(datum) {
   addTable:addTable, // add table
   getTable:getTable,
   deleteItemTable:deleteItemTable,
-  addBookingDate:addBookingDate //add date
+  addBooking:addBooking //add booking
 
 }

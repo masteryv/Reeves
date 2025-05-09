@@ -23,7 +23,6 @@ app.set('view engine', 'ejs');
 
 
 
-
 //  Serve static files from "public"
 app.use(express.static('style'));
 
@@ -172,6 +171,22 @@ app.post('/delTable', async (req, res) => {
         res.status(500).json({ message: 'Error deleting item', error });
     }
 });
+
+
+// add booking
+app.post('/booking', async (req, res) => {
+    const { date, personer  } = req.body;
+    console.log(date, personer )
+    if (!date || !personer) {
+        return res.status(400).json({ message: 'Missing required parameters' });
+    }
+    try {
+        const result = await dbService.addBooking(date, personer);
+        res.redirect("/");
+  }catch (error) {
+        res.status(500).json({ message: 'Error adding booking', error });
+    }
+  });
 
 //  Start the Server
 app.listen(PORT, () => {
