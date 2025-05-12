@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 nav img {
   border-radius: 50%;
   width: 40px;
@@ -28,36 +29,36 @@ nav button {
   font-weight: bolder;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+/*header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
 
 header div {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.3);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
 
 header h1 {
-  font-family: "Sacramento", cursive;
-  font-size: calc(20px + 18vh);
+    font-family: "Sacramento", cursive; 
+
+    font-size: calc(20px + 18vh);
   line-height: calc(20px + 20vh);
-  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
-      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
-    color: #fccaff; */
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; 
   text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
-  color: #fff6a9;
+    color: #fff6a9;
   font-family: "Sacramento", cursive;
   text-align: center;
   animation: blink 12s infinite;
@@ -65,81 +66,81 @@ header h1 {
 }
 
 header p {
-  font-size: 20px;
-  margin-top: 0;
-  font-family: "Playwrite IT Moderna", serif;
-  color: #000;
+    font-size: 20px;
+    margin-top: 0;
+    font-family: "Playwrite IT Moderna", serif;
+    color: #000;
 }
 
 .header-btn button {
-  background-color: #61c916;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  margin: 0 50px 0 50px;
-}
-
-main {
-  background-image: url(/img/Reves.png);
-  background-size: cover;
-  background-position: center;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  height: 100vh;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: #61c916;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 50px 0 50px;
+}*/
+/*main {
+    background-image: url(/img/Reves.png);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    color: #fff; 
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 .items {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 800px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px; 
+    width: 90%;
+    max-width: 800px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .items:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
 }
 
 p {
-  line-height: 1.6;
-  margin-bottom: 20px;
+    line-height: 1.6; 
+    margin-bottom: 20px; 
 }
 
-/* Responsive Design */
+/* Responsive Design 
 @media (max-width: 768px) {
-  main {
-    font-size: 16px;
-  }
-  .items {
-    width: 95%;
-    padding: 15px;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-}
+    main {
+        font-size: 16px; 
+    }
+
+    .items {
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+}*/
 .adminBody {
   background: #ffb347; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -147,47 +148,17 @@ p {
   color: black;
 }
 
-.bookingForm {
-  max-width: 500px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 50px black;
-  background: #000000; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: yellow rgb(21, 31, 50);
 }
 
-.bookingFormLbl {
+body {
   font-family: "Times New Roman", Times, serif;
-  font-size: 30px;
-  font-style: italic;
-  margin-bottom: 5px;
-  color: white;
-  display: block; /* Ensures it occupies the full width */
-  text-align: center; /* Centers the label text */
-}
-
-.bookingFormBtn {
-  padding: 8px 20px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 3px;
-  background-color: lightgoldenrodyellow;
+  font-size: 16px;
+  text-align: center;
   color: black;
-  cursor: pointer;
-}
-
-.bookingFormBtn:hover {
-  background-color: darkblue;
-  color: white;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
 }
 
 nav {
@@ -196,12 +167,6 @@ nav {
   justify-content: space-between;
   background-color: #000; /* Adjust based on your design */
   padding: 10px;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
 }
 
 .header-btn {

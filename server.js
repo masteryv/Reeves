@@ -182,7 +182,6 @@ app.post('/booking', async (req, res) => {
     }
     try {
         const result = await dbService.addBooking(date, personer);
-        res.redirect("/");
   }catch (error) {
         res.status(500).json({ message: 'Error adding booking', error });
     }

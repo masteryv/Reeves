@@ -1,23 +1,26 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
 
+
+
+html {
+    scrollbar-width:thin;
+    scrollbar-color: yellow rgb(21, 31, 50);
+  }
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+    line-height: 1.6;
 }
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #000; /* Adjust based on your design */
     padding: 10px;
-}
-
-.container{
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-
 }
 
 .header-btn{
@@ -42,6 +45,3 @@ nav {
     height: 600px;
     object-fit: cover;
 }
-
-
-

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("connected")
     createInputForm();
+    createTimeTable()
     });
 
 //genererar html
@@ -17,9 +18,7 @@ function createInputForm() {
 
     form.setAttribute("method", "post");
     form.setAttribute("action", "/booking");
-    form.onsubmit = function () {
-        return dateValidation();
-    };
+
     dateLabel.setAttribute("for", "date");
     dateLabel.textContent = "Enter the date you want to come";
     dateInput.setAttribute("type", "date");
@@ -43,7 +42,19 @@ function createInputForm() {
     form.appendChild(amountLabel);
     form.appendChild(amountInput);
     form.appendChild(submitButton);
-}
+
+
+
+    form.addEventListener('submit', function(event) {
+        
+        console.log("onsubmit");
+    if (dateValidation()) {
+        form.style.display = "none"; // Hide the form
+        alert("Form submitted successfully!");
+        return true; // Allow form submission
+    }
+    return false; // Prevent form submission if validation fails
+})
 
 
 function dateValidation() {
@@ -54,4 +65,44 @@ function dateValidation() {
         return false;
     }
     return true;
+
+
+  
+}
+}
+
+
+// time tables
+function createTimeTable() {
+
+    const timeContainer = document.querySelector('.time-container');
+    const table = document.createElement('table');
+    const headerRow = document.createElement('tr');
+    const timeHeader = document.createElement('th');
+    const availableHeader = document.createElement('th');
+    const timeInput = document.createElement('input')
+    timeHeader.textContent = "Time";
+    availableHeader.textContent = "Available";
+
+    timeInput.setAttribute
+
+    headerRow.appendChild(timeHeader);
+    headerRow.appendChild(availableHeader);
+    table.appendChild(headerRow);
+
+
+    for (let i = 0; i < 10; i++) {
+        const row = document.createElement('tr');
+        const timeCell = document.createElement('td');
+        const availableCell = document.createElement('td');
+
+        timeCell.textContent = `${i + 1}:00 PM`;
+        availableCell.textContent = "Available";
+
+        row.appendChild(timeCell);
+        row.appendChild(availableCell);
+        table.appendChild(row);
+    }
+
+    timeContainer.appendChild(table);
 }
