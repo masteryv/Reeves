@@ -4,7 +4,6 @@
 
 html {
     scrollbar-width:thin;
-    scrollbar-color: yellow rgb(21, 31, 50);
   }
 
 body {
@@ -15,13 +14,25 @@ body {
     line-height: 1.6;
 }
 
-nav {
+.menyMain{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-content: space-around;
+    align-items: center;
+    width: auto;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/*nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #000; /* Adjust based on your design */
+    background-color: #000; /* Adjust based on your design 
     padding: 10px;
-}
+}*/
 
 .header-btn{
     background: #173054;

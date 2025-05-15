@@ -3,9 +3,11 @@ const PORT = 3000;
 const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
+const session = require('express-session'); 
 const app = express();
 const path = require('path');
 const bcrypt = require('bcrypt');
+
 
 dotenv.config();
 
@@ -19,7 +21,11 @@ app.set('view engine', 'ejs');
 
 
 
-
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false
+}));
 
 
 
@@ -40,15 +46,22 @@ app.get('/meny', (req, res) => res.sendFile(path.join(__dirname, 'views', 'meny.
 //booking
 app.get('/booking', (req, res) => res.sendFile(path.join(__dirname, 'views', 'booking.html')));
 
-app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'views', 'login.html')));
+app.get('/login', (req, res) => {
+    console.log('Session:', req.session);
+    res.sendFile(path.join(__dirname, 'views', 'login.html'))
+});
 
 app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'views', 'register.html')));
 
-app.get('/admin', (req, res) => res.sendFile(path.join(__dirname, 'views', 'admin.html')));
+
 app.get('/admin', async function(req, res){
-    const result = await dbService.getMenu("items", "price","ingredients");
-    let data = {result}
-    res.render('admin', data);
+    console.log(req.session)
+    if(req.session.user){
+        
+        res.sendFile(path.join(__dirname, 'views', 'admin.html'))
+    } else {
+        res.redirect("/login")
+    }
 });
 
 //registrera
@@ -81,12 +94,12 @@ app.post('/signup', async (req, res) => {
 
 // login page 
 app.post('/login', async function (req,res) {
-    console.log(req.session);
-    req.session = {};
-    console.log(req.session);
+    
+
   let user = await dbService.getUser(req.body.email);
   if (await bcrypt.compare(req.body.password, user.password)){
-      req.session.user = user.email;
+        req.session.user = true;
+
       res.redirect("/admin");
   }else{
       res.render("login", {msg: "please try again"});
