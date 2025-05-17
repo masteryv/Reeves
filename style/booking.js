@@ -1,5 +1,18 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", async function() {
     console.log("connected")
+ try {
+        let res = await fetch('http://localhost:3000/bord'); // Fetch data from backend
+        let data = await res.json(); // Parse response as JSON
+        console.log(data); // Check if data is received correctly
+
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+
+
+
+
+
     createInputForm();
     createTimeTable()
     });
@@ -84,7 +97,8 @@ function createTimeTable() {
     timeHeader.textContent = "Time";
     availableHeader.textContent = "Available";
 
-    timeInput.setAttribute
+    timeInput.setAttribute('type', 'number');
+    timeInput.setAttribute('placeholder', 'please enter the time you wish to book');
 
     headerRow.appendChild(timeHeader);
     headerRow.appendChild(availableHeader);
@@ -105,4 +119,22 @@ function createTimeTable() {
     }
 
     timeContainer.appendChild(table);
+    timeContainer.appendChild(timeInput);
+    timeInput.addEventListener('input', function() {
+        const inputValue = parseInt(timeInput.value);
+        const rows = table.querySelectorAll('tr:not(:first-child)'); // Exclude header row
+        rows.forEach((row, index) => {
+            const availableCell = row.querySelector('td:nth-child(2)');
+            if (index === inputValue - 1) {
+                availableCell.textContent = "Not Available";
+            } else {
+                availableCell.textContent = "Available";
+            }
+        });
+    });
+
+
+    function fetchBordNr() {
+
+    }
 }

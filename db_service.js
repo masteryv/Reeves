@@ -142,6 +142,19 @@ const addBooking = async function addBooking(datum, personer) {
 }
 
 
+// get personer 
+async function getPersoner(bordNr, seats) {
+  console.log("antal personer");
+  try {
+      const res = await connection.query(
+          'SELECT * FROM bord'
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error getting bord:', error);
+      throw error;
+  }
+}
 
 
   
@@ -155,6 +168,6 @@ const addBooking = async function addBooking(datum, personer) {
   addTable:addTable, // add table
   getTable:getTable,
   deleteItemTable:deleteItemTable,
-  addBooking:addBooking //add booking
-
+  addBooking:addBooking, //add booking
+  getPersoner:getPersoner // get table
 }
