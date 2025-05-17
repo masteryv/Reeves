@@ -5,40 +5,51 @@ html {
   scrollbar-color: yellow rgb(21, 31, 50);
 }
 
-/*
-nav img {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+body {
+  background-color: blue;
 }
 
+h1 {
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+  color: #fff6a9;
+  font-family: "Sacramento", cursive;
+}
+
+.menyMain {
+  background: #ffb347; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: monospace;
+  color: black;
+}
+
+.menyMain p {
+  text-shadow: 1px 1px 0 white;
+}
+
+nav {
+  background: lightblue; /* 4 */
+  font-family: "Sacramento", cursive;
+  border: solid 1px red;
+  border-radius: 10px 10px 10px 10px;
+}
+
+nav ul {
+  list-style: none; /* 6 */
+}
+
+nav h2 {
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 white;
+}
 
 nav a {
-    display: flex;
-    margin-left: 0.5%;
-    text-decoration: none;
-    color: #fff;
-    border: 3px solid #2a5c28 ;
-    border-radius: 5px;
-    padding: 7px;
-    font-size: 14px;
-
-    .login-nav{
-        margin: 0px;
-    }
+  text-decoration: none;
+  color: red;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 white;
 }
-
-
-nav button {
-    margin-left: auto; 
-    width: 10%;
-    font-size: 23px;
-    border-radius: 10px;
-    font-weight: bolder;
-}
-
-
-
 
 /*header {
     display: flex;
@@ -159,6 +170,20 @@ p {
   color: black;
 }
 
+.menyMain th {
+  color: white;
+  font-family: fantasy;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 black;
+}
+
+.menyMain tr {
+  color: white;
+  font-family: monospace;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 black;
+}
+
 html {
   scrollbar-width: thin;
 }
@@ -169,6 +194,8 @@ body {
   text-align: center;
   color: black;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 .menyMain {
@@ -178,17 +205,81 @@ body {
   align-content: space-around;
   align-items: center;
   width: auto;
-  color: black;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/*nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #000; /* Adjust based on your design 
-    padding: 10px;
-}*/
+h1 {
+  font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+  text-align: center;
+}
+
+@media screen and (max-width: 376px) {
+  h1 {
+    font-size: 55px;
+  }
+}
+.menyMain p {
+  padding-bottom: 50px;
+}
+
+table {
+  width: 90%;
+  margin: 0 5%;
+  text-align: left;
+}
+
+th, td {
+  padding: 0.5em;
+}
+
+.slideimgcorp {
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+nav {
+  display: flex;
+  align-content: space-around;
+  align-items: center;
+  padding: 4px 5px 0px; /* 3 */
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex; /* 5 */
+  list-style: none; /* 6 */
+}
+
+nav li {
+  padding-left: 20px; /* 7! */
+}
+
+nav a {
+  text-decoration: none;
+  color: red;
+}
+
+@media only screen and (max-width: 376px) {
+  nav {
+    flex-direction: column;
+    padding: 0 0 0 0;
+    height: auto;
+  }
+  nav ul {
+    flex-direction: column;
+    padding: 0 0 0 0;
+  }
+  nav li {
+    padding: 10px 0 0 0;
+  }
+  .menyMain {
+    padding-top: 200px;
+  }
+}
 .header-btn {
   background: #173054;
   color: #fff;
