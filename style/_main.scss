@@ -7,12 +7,14 @@ html {
   }
   
 body{
-background-color: $thirdColour;
+    background-color: $thirdColour;
+    font-family: $mainFont;
+    color: black;
 }
 
 h1{
-    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
-    color: #fff6a9;
+    text-shadow: $textHeaderShadow;
+    color: $headlineColor;
     font-family:$subFont;
 }
 
@@ -20,54 +22,41 @@ h1{
 .menyMain{
     background-color: $thirdColour;    
     font-family: $mainFont;
-    color: black;
 }
 
 .menyMain p{
         text-shadow:  $textShadow;
-        font-family: fantasy;
+        font-family: $thirdFont;
 }
 
 nav {
-  background: $mainColour; /* 4 */
+    background: $mainColour; /* 4 */
     font-family: $subFont;
-    border: solid 1px  red;
+    border: solid 1px  white;
     border-radius: 10px 10px 10px 10px;
 
     h2{
-        color: $fourthColour;
+        color: $fourthColour;   
+        text-shadow:  $textShadowBlack;
     }
     
-}
+    a{
+        text-decoration: none;
+        color: $headlineColor;
+        text-shadow:  $textShadow;
 
-nav ul {
-  list-style: none; /* 6 */
-}
+    }
 
-nav h2{
-    font-size: 40px;
-    letter-spacing: 1px;
-    text-shadow:  $textShadowBlack;
-}
-
-nav a {
-  text-decoration: none;
-  color: red;
-  font-size: 30px;
-    letter-spacing: 1px;
-    text-shadow:  $textShadow;
+    a:hover{
+        color:$thirdColour;
+    }
 }
 
 
-.adminBody{
-    background-color: $thirdColour; 
-    font-family: $mainFont;
-    color: black;
-}
 
 .menyMain th{
     color: white;
-    font-family: fantasy;
+    font-family: $thirdFont;
     letter-spacing: 1px;
     text-shadow:  $textShadowBlack;
 }
@@ -78,4 +67,35 @@ nav a {
     font-family: $mainFont;
     letter-spacing: 1px;
     text-shadow:  $textShadowBlack;
+}
+
+.mainIndex p{
+    text-shadow: $textShadow;
+    color: $mainColour;
+}
+
+.btnField{
+    background: $mainColour;
+    color: white;
+}
+
+
+button {
+ background-color: $headlineColor;
+ font-family: $subFont;
+ border: none;
+ border-radius: 1rem;
+ color: $mainColour;
+ box-shadow: 0 0.4rem #dfd9d9;
+}
+
+button:active {
+ color: white;
+ box-shadow: 0 0.2rem #dfd9d9;
+}
+
+button:hover {
+ background: $subColour;
+ color: $headlineColor;
+ text-shadow: 0 0.1rem #bcb4b4;
 }

@@ -3,9 +3,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     createInputForm();
 
     console.log("connected")
-    
-
-
 
 
 

@@ -24,13 +24,14 @@
 
     <main>
         <h1>Fix the menu</h1>
-        <form method="POST" action="/meny">
+        <form method="POST" action="/meny" class="sPlatformForms">
             <label for=items">Items</label>
             <input type="items" name="items" id="items">
             <label for="price">Price</label>
             <input type="price" name="price" id="price">
             <label for="ingredients">Ingredients</label>
             <input type="ingredients" name="ingredients" id="ingredients">
+            <br>
             <input type="submit">	
         </form>
         <br><br>
@@ -45,20 +46,22 @@
         </table>
         <br><br>
 
-        <form method="POST" action="/del">
+        <form method="POST" action="/del" class="sPlatformForms">
             <label for="id">Write ID and delete that!</label>
             <input type="id" name="id" id="id">
+            <br>
             <input type="submit">	
         </form>
 
 
         <h1>Fix Tables</h1>
 
-        <form method="POST" action="table">
+        <form method="POST" action="table" class="sPlatformForms">
             <label for=bordNr">Table Nr</label>
             <input type="bordNr" name="bordNr" id="bordNr">
             <label for=seats">Seats amount</label>
             <input type="seats" name="seats" id="seats">
+            <br>
             <input type="submit">	
         </form>
 
@@ -71,9 +74,10 @@
         </table>
         <br><br>
 
-        <form method="POST" action="/delTable">
+        <form method="POST" action="/delTable" class="sPlatformForms">
             <label for="id">Write ID and delete that!</label>
             <input type="id" name="id" id="id">
+            <br>
             <input type="submit">	
         </form>
     </main>
