@@ -1,20 +1,14 @@
 document.addEventListener("DOMContentLoaded", async function() {
-    console.log("connected")
- try {
-        let res = await fetch('http://localhost:3000/bord'); // Fetch data from backend
-        let data = await res.json(); // Parse response as JSON
-        console.log(data); // Check if data is received correctly
-
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    }
-
-
-
-
-
+    createTimeTable();
     createInputForm();
-    createTimeTable()
+
+    console.log("connected")
+    
+
+
+
+
+
     });
 
 //genererar html
@@ -41,6 +35,7 @@ function createInputForm() {
     amountLabel.setAttribute("for", "personer");
     amountLabel.textContent = "How many people?";
     amountInput.setAttribute("type", "number");
+    amountInput.setAttribute("id", "works");
     amountInput.setAttribute("name", "personer"); // Add name attribute
     amountInput.setAttribute("placeholder", "Enter Here");
 
@@ -58,8 +53,17 @@ function createInputForm() {
 
 
 
-    form.addEventListener('submit', function(event) {
-        
+    form.addEventListener('submit', async function(event) {
+        try {
+        let res = await fetch('http://localhost:3000/getBordNrAndSeats'); // Fetch data from backend
+        let data = await res.json(); // Parse response as JSON
+        console.log("data"); // Check if data is received correctly
+        console.log(event); // Check if data is received correctly
+        fetchBord(data);
+
+        } catch (error) {
+        }
+
         console.log("onsubmit");
     if (dateValidation()) {
         form.style.display = "none"; // Hide the form
@@ -105,7 +109,7 @@ function createTimeTable() {
     table.appendChild(headerRow);
 
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 11; i < 22; i++) {
         const row = document.createElement('tr');
         const timeCell = document.createElement('td');
         const availableCell = document.createElement('td');
@@ -134,7 +138,20 @@ function createTimeTable() {
     });
 
 
-    function fetchBordNr() {
-
-    }
+    
 }
+function fetchBord(data){
+        console.log("dasdsad")
+        const personerInput = document.getElementById('works');
+        console.log(personerInput)
+
+  
+        Console.log(":används");
+        console.log(personerInput.value)
+
+        if (personerInput) {
+            console.log(personerInput.value, "hh")
+
+            return personerInput.value;
+        }    
+    }

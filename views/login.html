@@ -3,24 +3,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Reeves</title>
+        <title>Login</title>
+        <link rel="icon" type="image/x-icon" href="img/Reeves.jpg">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="login.js"></script>
     </head>
 <body>
-    <nav> 
-        <a href="/">Home</a>
-        <a href="/meny">Meny</a>
-        <a href="/login">Login</a>
+    <nav>
+    <h2>Reeves</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/meny">Meny</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
     </nav>
+    <br><br>
+
+    <main class="mainLogin">
+        <h1>Login</h1>
+
+        <p>Please login to get access to our admin page!</p>
 
     <form method="POST" action="/login">
         <label for="email">Email</label>
         <input type="email" name="email" id="email">
+        <br>
         <label for="password">Password</label>
         <input type="password" name="password" id="password">
+        <br>
         <input type="submit">	
     </form>
+    </main>
+
     
 </body>
 </html>

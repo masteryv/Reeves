@@ -119,6 +119,17 @@ app.get('/test', async function(req, res) {
     }
 })
 
+
+app.get('/getBordNrAndSeats', async function(req, res) {
+    try {
+        const result = await dbService.getTable("bordNr", "seats");
+        res.send(result);
+    } catch (error){
+        return res.status({message: error})
+    }
+    
+})
+
 // add menu 
 app.post('/meny', async (req, res) => {
     const { items, price, ingredients } = req.body;
@@ -201,15 +212,7 @@ app.post('/booking', async (req, res) => {
   });
 
 
-  // get bord
-app.get('/bord', async function(req, res) {
-    try {
-        const result = await dbService.getTable("bordNr", "seats");
-        res.send(result);
-
-    } catch (error) {
-        return res.status({message: error});
-    }});
+  
   
 
 //  Start the Server

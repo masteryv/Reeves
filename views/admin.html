@@ -3,66 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
+    <link rel="icon" type="image/x-icon" href="img/Reeves.jpg">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="admin.js"></script>
 </head>
 
 <body class="adminBody">
 
-    <a href="/">About Us</a>
-<h1>Fix the meny</h1>
-<form method="POST" action="/meny">
-    <label for=items">Items</label>
-    <input type="items" name="items" id="items">
-    <label for="price">Price</label>
-    <input type="price" name="price" id="price">
-    <label for="ingredients">Ingredients</label>
-    <input type="ingredients" name="ingredients" id="ingredients">
-    <input type="submit">	
-</form>
-<br><br>
 
-<table border="1" id="menuDisplay">
-    <tr>
-        <th>ID</th>
-        <th>Item</th>
-        <th>Price</th>
-        <th>Ingredients</th>
-    </tr>
-</table>
-<br><br>
+<nav>
+    <h2>Reeves</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/meny">Menu</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+    </nav>
+    <br><br>
 
-<form method="POST" action="/del">
-    <label for="id">Write ID and delete that!</label>
-    <input type="id" name="id" id="id">
-    <input type="submit">	
-</form>
+    <main>
+        <h1>Fix the menu</h1>
+        <form method="POST" action="/meny">
+            <label for=items">Items</label>
+            <input type="items" name="items" id="items">
+            <label for="price">Price</label>
+            <input type="price" name="price" id="price">
+            <label for="ingredients">Ingredients</label>
+            <input type="ingredients" name="ingredients" id="ingredients">
+            <input type="submit">	
+        </form>
+        <br><br>
+
+        <table border="1" id="menuDisplay">
+            <tr>
+                <th>ID</th>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Ingredients</th>
+            </tr>
+        </table>
+        <br><br>
+
+        <form method="POST" action="/del">
+            <label for="id">Write ID and delete that!</label>
+            <input type="id" name="id" id="id">
+            <input type="submit">	
+        </form>
 
 
-<h1>Fix Tables</h1>
+        <h1>Fix Tables</h1>
 
-<form method="POST" action="table">
-    <label for=bordNr">Table Nr</label>
-    <input type="bordNr" name="bordNr" id="bordNr">
-    <label for=seats">Seats amount</label>
-    <input type="seats" name="seats" id="seats">
-    <input type="submit">	
-</form>
+        <form method="POST" action="table">
+            <label for=bordNr">Table Nr</label>
+            <input type="bordNr" name="bordNr" id="bordNr">
+            <label for=seats">Seats amount</label>
+            <input type="seats" name="seats" id="seats">
+            <input type="submit">	
+        </form>
 
-<table border="1" id="tableDisplay">
-    <tr>
-        <th>ID</th>
-        <th>bordNr</th>
-        <th>seats</th>
-    </tr>
-</table>
-<br><br>
+        <table border="1" id="tableDisplay">
+            <tr>
+                <th>ID</th>
+                <th>bordNr</th>
+                <th>seats</th>
+            </tr>
+        </table>
+        <br><br>
 
-<form method="POST" action="/delTable">
-    <label for="id">Write ID and delete that!</label>
-    <input type="id" name="id" id="id">
-    <input type="submit">	
-</form>
+        <form method="POST" action="/delTable">
+            <label for="id">Write ID and delete that!</label>
+            <input type="id" name="id" id="id">
+            <input type="submit">	
+        </form>
+    </main>
+
 </body>
 </html>

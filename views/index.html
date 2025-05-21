@@ -4,79 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reeves</title>
+    <link rel="icon" type="image/x-icon" href="img/Reeves.jpg">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-    <aside> 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-            <div class="container-fluid">
-              <img src="img/Reeves.jpg" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/aboutUs">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/meny">Meny!</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/login">Login!</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </aside>
+    <nav>
+    <h2>Reeves</h2>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/meny">Menu</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+    </nav>
+    <br><br>
 
-
-
-            <header>
-              <!-- Carousel -->
-              <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-              <!-- Indicators/dots -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-          </div>
-
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/resturan.jpg" alt="Los Angeles" class="d-block w-100 slideimgcorp">
-              </div>
-              <div class="carousel-item">
-                <img src="img/resturang.jpg" alt="Chicago" class="d-block w-100 slideimgcorp">
-              </div>
-              <div class="carousel-item">
-                <img src="img/Reeves.jpg" alt="New York" class="d-block w-100 slideimgcorp">
-              </div>
-            </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
                 <h1 class="h1niigg">Reeves</h1>
                 <p>Bro jag vet inte vad du skrev det går inte att se!</p>
             </header>
             <div class="header-btn">
-                <button id="bookingBtn">Book a table</button>
-                <button>see menu</button>
+                
+                <button id="bookingBtn" onclick="location.href='/booking';">Book a table</button>
+                <button onclick="location.href='/meny';">see menu</button>
             </div>
             <main>
                 <div class="items">
