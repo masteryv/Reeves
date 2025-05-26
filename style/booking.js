@@ -51,6 +51,7 @@ function createInputForm() {
 
 
     form.addEventListener('submit', async function(event) {
+        event.preventDefault();
         try {
         let res = await fetch('http://localhost:3000/getBordNrAndSeats'); // Fetch data from backend
         let data = await res.json(); // Parse response as JSON
@@ -140,7 +141,7 @@ function createTimeTable() {
 function fetchBord(data){
         console.log("dasdsad")
         const personerInput = document.getElementById('works');
-        console.log(personerInput)
+        console.log(personerInput.value)
 
   
         Console.log(":används");
