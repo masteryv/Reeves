@@ -156,6 +156,20 @@ async function getPersoner(bordNr, seats) {
   }
 }
 
+// add to timetable 
+const addTimeTable = async function addTimeTable(bordNr, dateDay, timmar) {
+  console.log("!");
+  try {
+      const res = await connection.query(
+          'INSERT INTO timetable (bordNr, dateDay, timmar) VALUES (?,?,?)',
+          [bordNr, dateDay, timmar]
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error adding to time table:', error);
+      throw error;
+  }
+}
 
   
   module.exports = {
@@ -169,5 +183,6 @@ async function getPersoner(bordNr, seats) {
   getTable:getTable,
   deleteItemTable:deleteItemTable,
   addBooking:addBooking, //add booking
-  getPersoner:getPersoner // get table
+  getPersoner:getPersoner, // get table
+  addTimeTable:addTimeTable
 }

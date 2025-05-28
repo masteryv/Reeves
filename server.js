@@ -130,6 +130,7 @@ app.get('/getBordNrAndSeats', async function(req, res) {
     
 })
 
+
 // add menu 
 app.post('/meny', async (req, res) => {
     const { items, price, ingredients } = req.body;

@@ -32,7 +32,7 @@ function fetchData(data) {
         return;
     }
 
-    // Clear existing table rows (if any)
+    // Clear existing table rows
     table.innerHTML = `
         <tr>
             <th>ID</th>

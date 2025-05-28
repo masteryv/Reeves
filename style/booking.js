@@ -138,18 +138,39 @@ function createTimeTable() {
 
     
 }
-function fetchBord(data){
-        console.log("dasdsad")
-        const personerInput = document.getElementById('works');
-        console.log(personerInput.value)
+
+function fetchBord(data) {
+    console.log("fetch bord function called");
+    const personerInput = document.getElementById('works');
+    const antalPersoner = parseInt(personerInput.value, 10);// 10an r där för att det inte skall ska bli en bugg om det är en sträng
+    const container = document.querySelector('.booking-container');
 
   
-        Console.log(":används");
-        console.log(personerInput.value)
+    const enoughSeats = data.filter(bord => bord.seats >= antalPersoner);
 
-        if (personerInput) {
-            console.log(personerInput.value, "hh")
-
-            return personerInput.value;
-        }    
+    if (enoughSeats.length === 0) {
+        const noTableMsg = document.createElement('div');
+        noTableMsg.textContent = "No available tables for the selected number of people.";
+        container.appendChild(noTableMsg);
+        selectedBordNr = null;
+        return;
     }
+
+    let chosenBord = enoughSeats.find(bord => bord.seats === antalPersoner);
+
+    // If no exact match, pick the one with the smallest number of seats greater than antalPersoner
+    if (!chosenBord) {
+        chosenBord = enoughSeats.reduce((prev, curr) => 
+            (curr.seats < prev.seats ? curr : prev)
+        );
+    }
+
+    // Show only the chosen table
+    const bordElement = document.createElement('div');
+    bordElement.classList.add('bord', 'selected');
+    bordElement.textContent = `Bord ${chosenBord.bordNr} - Seats: ${chosenBord.seats}`;
+    container.appendChild(bordElement);
+
+    // Set selectedBordNr automatically
+    selectedBordNr = chosenBord.bordNr;
+}
