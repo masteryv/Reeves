@@ -212,6 +212,19 @@ app.post('/booking', async (req, res) => {
     }
   });
 
+//add to timeTable
+app.post('/timeTable', async (req, res) => {
+    const { bordNr, dateDay, timmar} = req.body;
+    console.log(bordNr, dateDay, timmar )
+    if (!bordNr || !dateDay || !timmar) {
+        return res.status(400).json({ message: 'Missing required parameters' });
+    }
+    try {
+        const result = await dbService.addTimeTable(bordNr, dateDay, timmar);
+  }catch (error) {
+        res.status(500).json({ message: 'Error adding booking', error });
+    }
+  });
 
   
   
