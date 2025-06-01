@@ -221,13 +221,23 @@ app.post('/timeTable', async (req, res) => {
     }
     try {
         const result = await dbService.addTimeTable(bordNr, dateDay, timmar);
+        alert("Booked!")
   }catch (error) {
         res.status(500).json({ message: 'Error adding booking', error });
     }
   });
 
   
-  
+  //get time table
+    app.get('/getTimeTable', async function(req, res) {
+    try {
+        const result = await dbService.getTimeTable("bordNr", "dateDay", "timmar");
+        res.send(result);
+
+    } catch (error) {
+        return res.status({message: error});
+    }
+})
 
 //  Start the Server
 app.listen(PORT, () => {

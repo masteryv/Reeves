@@ -70,6 +70,8 @@ function createInputForm() {
         return true; // Allow form submission
     }
     return false; // Prevent form submission if validation fails
+
+
 })
 
 
@@ -233,10 +235,15 @@ function createTimeTable() {
     // Highlight chosen time in table
     timeInput.addEventListener('input', function() {
         const inputValue = parseInt(timeInput.value);
+
+        if(inputValue < 0 ){
+            alert("Please enter a valid time.");
+            return;
+        }
         const rows = table.querySelectorAll('tr:not(:first-child)');
         rows.forEach((row, index) => {
             const availableCell = row.querySelector('td:nth-child(2)');
-            if (index === inputValue - 1) {
+            if (index === inputValue ) {
                 availableCell.textContent = "Not Available";
             } else {
                 availableCell.textContent = "Available";
@@ -244,23 +251,34 @@ function createTimeTable() {
         });
     });
 
-    timeForm.addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const timmar = timeInput.value;
-        if (!timmar) {
-            alert("Please enter a time.");
+   // ...existing code...
+
+timeForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+   /* const timmar = timeInput.value;
+    if (!timmar) {
+        alert("Please enter a time.");
+        return;
+    }
+*/
+    const payload = {
+        bordNr: selectedBordNr,
+        dateDay: selectedDate,
+        timmar: timeInput.value
+    };
+
+    console.log(payload);
+
+    try {
+        const bookingRes = await fetch('http://localhost:3000/getTimeTable');
+        const bookingData = await bookingRes.json();
+
+        // Use the validation result to decide if booking is allowed
+        if (!bookingValidation(bookingData, payload)) {
+            alert("This time is already booked. Please choose another time.");
             return;
         }
 
-
-        const payload = {
-            bordNr: selectedBordNr,
-            dateDay: selectedDate,
-            timmar: timmar
-        };
-        console.log(payload);
-
-         try {
         const response = await fetch('http://localhost:3000/timeTable', {
             method: 'POST',
             headers: {
@@ -269,19 +287,28 @@ function createTimeTable() {
             body: JSON.stringify(payload)
         });
 
-        if (response.ok) {
-            alert("Booking successful!");
-            // Optionally, clear the form or redirect
-        }else {
-            const err = await response.json();
-            console.error("Booking failed:", err);
-            alert("Failed to book. Try again.");
-        }
+        alert("Booked!");
     } catch (err) {
         console.error("Error submitting time table:", err);
-        alert("Server error. Try again later.");
+        alert("Faild to send to the database");
     }
+});
 
+// ...existing code...
 
-})
+function bookingValidation(bookingData, payload) {
+    for (const booking of bookingData) {
+        console.log("Muahahahsh"  + booking.bordNr + "b " + payload.bordNr + "p " + booking.dateDay + "b " + payload.dateDay + "p " + booking.timmar + "b " + payload.timmar);
+        if (
+            booking.bordNr === payload.bordNr &&
+            booking.dateDay === payload.dateDay &&
+            String(booking.timmar) === String(payload.timmar)
+        
+        ){
+            console.log("batman")
+            return false;
+        }
+    }
+    return true;
+}
 }

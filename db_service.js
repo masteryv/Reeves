@@ -171,6 +171,20 @@ const addTimeTable = async function addTimeTable(bordNr, dateDay, timmar) {
   }
 }
 
+// get timeTable 
+async function getTimeTable(bordNr, dateDay, timmar) {
+  console.log("Tider för bord");
+  try {
+      const res = await connection.query(
+          'SELECT * FROM timetable'
+      );
+      return res[0]; // MySQL returns an array, first item is the result
+  } catch (error) {
+      console.error('Error getting timeTable:', error);
+      throw error;
+  }
+}
+
   
   module.exports = {
   getUser: getUser, // get user 
@@ -184,5 +198,6 @@ const addTimeTable = async function addTimeTable(bordNr, dateDay, timmar) {
   deleteItemTable:deleteItemTable,
   addBooking:addBooking, //add booking
   getPersoner:getPersoner, // get table
-  addTimeTable:addTimeTable
+  addTimeTable:addTimeTable,
+  getTimeTable:getTimeTable
 }
