@@ -145,7 +145,9 @@ function createTimeTable() {
 function fetchBord(data) {
 
     const dateInput = document.querySelector('input[type="date"]');
-selectedDate = dateInput.value;
+    const rawDate = new Date(dateInput.value);
+selectedDate = rawDate.toLocaleDateString('sv-SE'); // sets as YYYY-MM-DD
+    selectedDate = dateInput.value;
 
 
     console.log("fetch bord function called");
@@ -298,10 +300,25 @@ timeForm.addEventListener('submit', async function(event) {
 
 function bookingValidation(bookingData, payload) {
     for (const booking of bookingData) {
-        console.log("Muahahahsh"  + booking.bordNr + "b " + payload.bordNr + "p " + booking.dateDay + "b " + payload.dateDay + "p " + booking.timmar + "b " + payload.timmar);
+        //console.log("Muahahahsh"  + booking.bordNr + "b " + payload.bordNr + "p " + booking.dateDay + "b " + payload.dateDay + "p " + booking.timmar + "b " + payload.timmar);
+
+        //const bookingDate = new Date(booking.dateDay).toISOString().split('T')[0];
+        //console.log("bookingDate", bookingDate)
+        // console.log("payload", payload)
+       //console.log("booking", booking)
+
+        // Normalize booking date to local date string
+        const bookingDate = new Date(booking.dateDay);
+
+        // If you want to compare in **local timezone**, use:
+        const bookingLocalDate = bookingDate.toLocaleDateString('sv-SE'); // 'YYYY-MM-DD'
+
+        // Or if you want to keep using UTC:
+        // const bookingUtcDate = bookingDate.toISOString().split('T')[0];
+
         if (
             booking.bordNr === payload.bordNr &&
-            booking.dateDay === payload.dateDay &&
+            bookingLocalDate === payload.dateDay &&
             String(booking.timmar) === String(payload.timmar)
         
         ){
