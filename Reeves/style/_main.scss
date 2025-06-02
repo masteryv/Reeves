@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+
+nav img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+
+nav a {
+    display: flex;
+    margin-left: 0.5%;
+    text-decoration: none;
+    color: #fff;
+    border: 3px solid #2a5c28 ;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 14px;
+
+    .login-nav{
+        margin: 0px;
+    }
+}
+
+
+nav button {
+    margin-left: auto; 
+    width: 10%;
+    font-size: 23px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+
+
+
+/*header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+header div {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+header h1 {
+    font-family: "Sacramento", cursive; 
+
+    font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; 
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+header p {
+    font-size: 20px;
+    margin-top: 0;
+    font-family: "Playwrite IT Moderna", serif;
+    color: #000;
+}
+
+.header-btn button {
+    background-color: #61c916;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 50px 0 50px;
+}*/
+
+/*main {
+    background-image: url(/img/Reves.png);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    color: #fff; 
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 20px; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.items {
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px; 
+    width: 90%;
+    max-width: 800px; 
+    text-align: center; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.items:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); 
+}
+
+h1 {
+    font-size: 2.5rem; 
+    margin-bottom: 20px; 
+}
+
+p {
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+}
+
+/* Responsive Design 
+@media (max-width: 768px) {
+    main {
+        font-size: 16px; 
+    }
+
+    .items {
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+}*/
+
+
+.adminBody{
+    background: #ffb347;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffcc33, #ffb347);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
+    font-family: monospace;
+    color: black;
+}
