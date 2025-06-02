@@ -9,6 +9,17 @@
     <script src="booking.js"></script>
 </head>
 <body>
+    <header>
+        <nav>
+        <h2>Reeves</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/meny">Menu</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    <br><br><br><br>
+    </header>
     <div class="booking-container">
    <!-- <div class="formContainer">
         <form method="post" action="">
@@ -23,5 +34,14 @@
 <div class="time-container">
     
 </div>
+<div class="bookingComplete">
+    <h1>Booking Complete</h1>
+    <p>Thank you for booking with us! We look forward to seeing you.</p>
+    <button onclick="window.location.href='/'">Return to Home</button>
+    <style>
+    .bookingComplete {
+        display: none;
+    }
+    </style>
 </body>
 </html>
